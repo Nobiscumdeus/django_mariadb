@@ -1,0 +1,68 @@
+{% extends 'customersite/base.html' %}
+
+
+
+{% block content %}
+
+{% if detail %}
+
+<div class="responsive">
+<table class="table"> 
+    <caption> Records of {{ detail.first_name }} {{ detail.last_name }} </caption>
+    <thead>
+    <tr>
+          
+               <th scope="col"> First Name </th>
+               <th scope="col"> Last Name </th>
+               <th scope="col"> Email </th>
+               <th scope="col"> Address </th>
+               <th scope="col"> State </th>
+               <th scope="col"> City </th>
+               <th scope="col"> Zip code </th>
+               <th scope="col"> Date Created </th>
+               <th scope="col"> ID </th>
+               <th scope="col"> Delete </td>
+    </tr>
+</thead>
+    
+
+  
+    <tbody>
+       
+
+            <tr scope="row">
+                <td> {{ detail.first_name }} </td>
+                <td> {{ detail.last_name }} </td>
+                <td>{{ detail.email }} </td>
+                <td> {{ detail.address }} </td>
+                <td> {{ detail.state }} </td>
+                <td>{{ detail.city }}</td>
+                <td>{{ detail.zip_code }}</td>
+                <td> {{ detail.created_at }} </td>
+                <td>  {{ detail.id}} </td>
+                <td> <a href="{% url 'customersite:delete' detail.id %}" class="btn btn-secondary">Delete</a></td>
+
+                
+            </tr>
+            
+       
+        </tbody>
+
+      
+        
+
+      </table>
+    </div>
+      <a href="{% url 'customersite:enter'%}" class="btn btn-secondary">Back </a>
+    <a href="{% url 'customersite:update' detail.id %}" class="btn btn-primary"> Edit Record </a>
+
+    {% endif %}
+     
+
+    
+{% endblock content %}
+    
+
+
+
+

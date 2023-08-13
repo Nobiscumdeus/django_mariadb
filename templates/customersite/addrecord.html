@@ -1,0 +1,19 @@
+{% extends 'customersite/base.html' %}
+
+
+
+{% block content %}
+
+<h2> Add Record here </h2>
+
+<div class="col-md-6 offset-3">
+<form method="POST">
+
+   {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-secondary"> Add Record </button>
+</form>
+</div>
+    
+{% endblock content %}
+    

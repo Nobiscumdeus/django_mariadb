@@ -1,0 +1,29 @@
+{% extends 'customersite/base.html' %}
+
+{% block content %}
+
+
+<div class="col-md-6 offset-md-3">
+    <h3> Login </h3>
+
+    <form method="POST" action="{% url 'customersite:login_user' %}">
+        
+        {% csrf_token %}
+       <div class="mb-3">
+        <input type="text" class="form-control" name="username" placeholder="Enter Name" required>
+       </div>
+       <div class="mb-3">
+        <input type="password" class="form-control" name="password" placeholder="Enter Password" required>
+       </div>
+       
+        
+        <button type="submit" class="btn btn-secondary"> Login </button>
+
+
+    </form>
+
+</div>
+
+
+
+{% endblock content %}

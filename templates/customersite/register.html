@@ -1,0 +1,46 @@
+{% extends 'customersite/base.html' %}
+
+
+
+{% block content %}
+
+<div class="col-md-6 offset-md-3">
+    <h1> Register </h1>
+    <br>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Ooops!!! Just  some errors </strong> <br>
+        Guy
+        {% for field in form %}
+        {% if fields.errors %}
+        {{ field.errors }}
+        {% endif %}
+
+        {% endfor %}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+
+<form method="POST" action="{% url 'customersite:register'%}">
+       
+{% csrf_token %}
+
+
+{% comment %}
+    We simply grab the forms that has been erstwhile preconfigured 
+
+
+{% endcomment %}
+
+{{ form.as_p }}
+<button type="submit" class="btn btn-secondary"> Register </button>
+    
+
+    </form>
+
+</div>
+    
+{% endblock content %}
+
+    

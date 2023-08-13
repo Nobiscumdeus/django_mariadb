@@ -1,0 +1,7 @@
+.env
+
+Pipfile.lock
+mariadb
+*.mariadb
+__pycache__/
+*.pyc
